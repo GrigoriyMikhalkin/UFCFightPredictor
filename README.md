@@ -9,7 +9,7 @@ First of all, you need to clone repository:
 
 Make sure, you have `python 3.2`, or later, installed. Also, install dependencies(i would recommend to set `virtualenv` before that step):
 
-    pip install requirements.txt
+    pip install -r requirements.txt
 
 Then, to predict fight, execute command with following syntax:
 

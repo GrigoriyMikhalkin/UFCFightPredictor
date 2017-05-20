@@ -29,4 +29,4 @@ When command executed it makes, basically, 2 things.
 
 First step is -- it checks if training dataset exists. If not, loads fighters stats from UFC.com and fight histories from Sherdog.com. Then merges this data into training dataset and store it in data folder.
 
-Second step -- trains chosen classifier(default is Gaussian Naive Bayes). After classifier is train, it lloks for given fighters stats on UFC.com, calculates features from that stats and makes prediction.
+Second step -- trains chosen classifier(default is SVM classifier with linear kernel). After classifier is train, it looks for given fighters stats on UFC.com, calculates features from that stats and makes prediction.

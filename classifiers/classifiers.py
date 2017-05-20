@@ -1,16 +1,15 @@
 from sklearn.naive_bayes import GaussianNB
+from sklearn.svm import SVC
+from sklearn.ensemble import AdaBoostClassifier
 from sklearn.model_selection import train_test_split
 
 
-class NBClassifier:
-    """
-    Naive Bayes classifier
-    """
-    def __init__(self, dataset):
+class BaseClassifier:
+    def __init__(self, dataset, params):
         """
         :param dataset: pandas.DateFrame
         """
-        self.clf = GaussianNB()
+        self.clf = self.CLASSIFIER(**params)
         self.accuracy = None
         self.fit_classifier(dataset)
 
@@ -39,3 +38,24 @@ class NBClassifier:
         :param data: list
         """
         return self.clf.predict(data)
+
+
+class NBClassifier(BaseClassifier):
+    """
+    Naive Bayes classifier
+    """
+    CLASSIFIER = GaussianNB
+
+
+class SVCClassifier(BaseClassifier):
+    """
+    SVC Classifier
+    """
+    CLASSIFIER = SVC
+
+
+class AdaBoostClassifier(BaseClassifier):
+    """
+    AdaBoost Classifier
+    """
+    CLASSIFIER = AdaBoostClassifier

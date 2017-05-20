@@ -13,9 +13,15 @@ Make sure, you have `python 3.2`, or later, installed. Also, install dependencie
 
 Then, to predict fight, execute command with following syntax:
 
-    python predict.py [--clf nb] [--refresh] 'fighter1_name' 'fighter2_name'
+    python predict.py [--clf classifier abr.] [--refresh] 'fighter1_name' 'fighter2_name'
 
-Option `--clf` specifies classifier(default Gaussian Naive Bayes), `--refresh` -- makes predictor to refresh train dataset(it will take ~10 mins). Both fighters should be current UFC fighters and, their name, should be spelled as on UFC.com. Command will return prediction for `fighter1`, either 'win' or 'lose'.
+Option `--clf` specifies classifier(default is SVM Classifier with linear kernel), `--refresh` -- makes predictor to refresh train dataset(it will take ~10 mins). Both fighters should be current UFC fighters and, their name, should be spelled as on UFC.com. Command will return prediction for `fighter1`, either 'win' or 'lose'.
+
+Available classifiers:
+
+  - Gaussian Naive Bayes [nb]
+  - SVC (svc)
+  - AdaBoost (ada)
 
 ## How it works
 
